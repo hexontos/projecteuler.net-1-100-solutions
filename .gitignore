@@ -1,0 +1,86 @@
+# Dependencies
+node_modules
+node_modules/
+
+# Build outputs
+dist
+dist/
+*.js
+*.js.map
+
+# Haskell / GHC build outputs
+.stack-work/
+dist-newstyle/
+cabal.project.local
+cabal.project.freeze
+*.hi
+*.dyn_hi
+*.o
+*.dyn_o
+*.a
+*.so
+*.dll
+*.dylib
+*.prof
+*.aux
+*.hp
+*.eventlog
+*.tix
+*.ps
+ghci_history
+.ghc.environment.*
+
+# Compiled executables
+Solutions
+Solutions.exe
+*.exe
+*.out
+*.app
+*.bin
+*.elf
+
+# Environment variables
+.*
+./.*
+.env
+.env.local
+.env.*.local
+!.gitignore
+
+# Git worktrees
+worktrees/
+worktrees/*
+
+# Editor/IDE files
+.vscode/
+.idea/
+.nanocoder/
+.eslintcache
+coverage/
+*.tsbuildinfo
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.DS_Store/*
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+*/.DS_Store
+*/.DS_Store?
+*/._*
+*/.Spotlight-V100
+*/.Trashes
+
+
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
