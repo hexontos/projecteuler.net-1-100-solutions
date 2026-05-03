@@ -1,4 +1,5 @@
 import Data.Char (digitToInt)
+import qualified Data.IntSet as IS
 
 
 problemOne :: Integer
@@ -89,9 +90,10 @@ problemNine = sum [ a * b * c | m <- [2..22], n <- [1..m-1],
 
 
 problemTen :: Integer
-problemTen = sum $ takeWhile (< 2_000_000) primes
+problemTen = sum $ map fromIntegral $ sieve 2 (IS.fromDistinctAscList [2..2_000_000])
     where
-        primes = 2 : sieve [3,5..]
-        sieve :: [Integer] -> [Integer]
-        --sieve [] = [] actually we pass inf list
-        sieve (p:xs) = p : sieve [x | x <- xs, x*x > p || x `mod` p /= 0]
+        sieve p s
+            | p * p > 2_000_000 = IS.elems s
+            | otherwise = sieve nextP (IS.filter (\x -> x == p || x `mod` p /= 0) s)
+            where
+                nextP = head $ dropWhile (\x -> not (x `IS.member` s)) [p+1..]
